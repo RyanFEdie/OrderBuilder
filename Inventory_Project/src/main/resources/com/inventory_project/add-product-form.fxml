@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory_project.ProductFormController">
+   <children>
+      <Text fx:id="windowType" layoutX="43.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <VBox layoutX="74.0" layoutY="168.0" spacing="18.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max" />
+         </children>
+      </VBox>
+      <VBox layoutX="211.0" layoutY="233.0" prefHeight="94.0" prefWidth="77.0" spacing="9.0">
+         <children>
+            <TextField fx:id="quantityField" />
+            <TextField fx:id="priceField" prefHeight="26.0" prefWidth="100.0" />
+            <TextField fx:id="maxField" />
+         </children>
+      </VBox>
+      <VBox layoutX="211.0" layoutY="164.0" spacing="9.0">
+         <children>
+            <TextField fx:id="idField" editable="false" promptText="Disabled - auto-generated" />
+            <TextField fx:id="nameField" />
+         </children>
+      </VBox>
+      <TableView fx:id="partTablePicker" layoutX="517.0" layoutY="77.0" prefHeight="194.0" prefWidth="465.0">
+        <columns>
+          <TableColumn fx:id="partIdColumn" prefWidth="71.2000732421875" text="Part ID" />
+          <TableColumn fx:id="partNameColumn" prefWidth="135.199951171875" text="Part Name" />
+            <TableColumn fx:id="partInventoryColumn" prefWidth="115.199951171875" text="Inventory Level" />
+            <TableColumn fx:id="partPriceColumn" prefWidth="145.5999755859375" text="Price/ Cost per Unit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="partTablePicked" layoutX="515.0" layoutY="327.0" prefHeight="194.0" prefWidth="465.0">
+        <columns>
+          <TableColumn fx:id="pickedIdColumn" prefWidth="75.0" text="Part ID" />
+          <TableColumn fx:id="pickedNameColumn" prefWidth="107.9998779296875" text="Part Name" />
+            <TableColumn fx:id="pickedInventoryColumn" prefWidth="115.2000732421875" text="Inventory Level" />
+            <TableColumn fx:id="pickedPriceColumn" prefWidth="166.4000244140625" text="Price/ Cost per Unit" />
+        </columns>
+      </TableView>
+      <Button fx:id="removeAssociatedPartButton" layoutX="836.0" layoutY="538.0" mnemonicParsing="false" onAction="#onRemoveAssociatedPartButtonPress" text="Remove Associated Part" />
+      <Button fx:id="cancelProductButton" layoutX="928.0" layoutY="588.0" mnemonicParsing="false" onAction="#onCancelProductButtonPress" text="Cancel" />
+      <Button fx:id="saveProductButton" layoutX="836.0" layoutY="588.0" mnemonicParsing="false" onAction="#onSaveProductButtonPush" text="Save" />
+      <TextField fx:id="pickerSearchField" layoutX="795.0" layoutY="43.0" prefHeight="25.0" prefWidth="187.0" promptText="Search by PartID or Name" />
+      <Text layoutX="320.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" />
+      <TextField fx:id="minField" layoutX="361.0" layoutY="306.0" prefHeight="25.0" prefWidth="78.0" />
+      <Button fx:id="pickSelectedPartButton" layoutX="944.0" layoutY="280.0" mnemonicParsing="false" onAction="#onPickSelectedPartButtonPress" text="Add" />
+   </children>
+</Pane>

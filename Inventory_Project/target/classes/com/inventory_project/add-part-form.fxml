@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory_project.PartFormController">
+   <children>
+      <RadioButton fx:id="inHouse" layoutX="182.0" layoutY="54.0" mnemonicParsing="false" onAction="#onInHouseToggle" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="partSource" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="outsourced" layoutX="369.0" layoutY="54.0" mnemonicParsing="false" onAction="#onOutsourcedToggle" text="Outsourced" toggleGroup="$partSource" />
+      <Text fx:id="windowType" layoutX="42.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <VBox layoutX="75.9619140625" layoutY="129.93310546875" spacing="10.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price/Cost" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max" wrappingWidth="28.7294921875" />
+            <Text fx:id="bottomText" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine ID" />
+         </children>
+      </VBox>
+      <VBox layoutX="178.0" layoutY="128.0">
+         <children>
+            <TextField fx:id="idField" editable="false" promptText="Auto Gen- Disabled">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="nameField" />
+            <TextField fx:id="quantityField" />
+            <TextField fx:id="priceField" />
+            <TextField fx:id="maxField" />
+            <TextField fx:id="variableField" />
+         </children>
+      </VBox>
+      <Text layoutX="376.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" />
+      <TextField fx:id="minField" layoutX="420.0" layoutY="238.0" prefHeight="25.0" prefWidth="142.0" />
+      <Button fx:id="savePartButton" layoutX="366.0" layoutY="316.0" mnemonicParsing="false" onAction="#onSavePartButtonPress" text="Save" />
+      <Button fx:id="cancelPartButton" layoutX="426.0" layoutY="316.0" mnemonicParsing="false" onAction="#onCancelPartButtonPress" text="Cancel" />
+   </children>
+</Pane>
